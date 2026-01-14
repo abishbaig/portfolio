@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap');
+
+
+.hero-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    width: 96%;
+    border-left: 2px solid var(--grey-color);
+    top: 5%;
+    bottom: 10%;
+}
+
+.hero-container .right-container img {
+    opacity: 0.8;
+}
+
+.left-container .greetings {
+    color: #DE8B48;
+}
+
+.left-container {
+    margin-left: 20px;
+}
+
+
+.main-content h3 span {
+    color: #FF8484;
+    font-family: 'Inter', sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.main-content h3 {
+    font-family: 'Exo', sans-serif;
+    font-style: italic;
+    font-weight: 550;
+}
+
+.greetings {
+    font-family: 'Roboto Mono', monospace;
+    margin-left: 10px;
+}
+
+.main-content h1 {
+    font-family: "Goldman", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+.main-content {
+    margin: 10px 0 10px 10px;
+    border-left: 2px solid var(--grey-color);
+    padding-left: 20px;
+}
+
+.resume {
+    margin-left: 120px;
+    margin-top: 30px;
+    position: relative;
+    z-index: 10;
+}
+
+.resume a {
+    display: inline-block;
+    padding: 10px 20px;
+
+    text-decoration: none;
+    border-radius: 8px;
+    border: 1px solid white;
+    transition: 0.3s ease-in-out;
+    background-color: black;
+    color: white;
+    animation: resume-btn-anim 2s ease-in-out infinite;
+}
+
+@keyframes resume-btn-anim {
+    0% {
+        box-shadow: 0 2px 4px 2px rgba(255, 255, 255, 0.2), 0 2px 4px 2px rgba(255, 255, 255, 0.19);
+    }
+    50% {
+        box-shadow: 0 2px 4px 2px rgba(255, 255, 255, 0.4), 0 2px 4px 2px rgba(255, 255, 255, 0.39);
+    }
+    100% {
+        box-shadow: 0 2px 4px 2px rgba(255, 255, 255, 0.2), 0 2px 4px 2px rgba(255, 255, 255, 0.19);
+    }
+}
+
+.resume a:hover {
+    background-color: #4a90e2;
+    color: white;
+    transition: 0.5s ease-in-out;
+}

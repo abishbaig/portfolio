@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/x-icon" href="{% static 'project/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    {% block linking_files %}{% endblock %}
+    <title>Muhammad Abish Baig</title>
+</head>
+<body>
+    <header>
+        {% comment %} Header Top Main Content {% endcomment %}
+        <div class="main_head">
+            <pre id="const_heading1">{% block header_content %}Home Page{% endblock %}</pre>
+            <pre id="const_heading2">- Abish's Portfolio</pre>
+        </div>
+
+        {% comment %} Nav Bar {% endcomment %}
+        <div class="navbar">
+            <div class="tab active">
+                <a href="{% url 'home' %}"><i class="fa-brands fa-markdown" style="color: #DE8B48;"></i></a>
+                <a href="{% url 'home' %}">Readme.md</a>
+            </div>
+            <div class="tab">
+                <a href="#"><i class="fa-brands fa-html5" style="color: #ff6666;"></i></a>
+                <a href="#">About.html</a>
+            </div>
+            <div class="tab">
+                <a href="#"><i class="fa-brands fa-css3" style="color: #4d79ff;"></i></a>
+                <a href="#">Education.css</a>
+            </div>
+            <div class="tab">
+                <a href="#"><i class="fa-brands fa-node-js" style="color:  #29a329;"></i></a>
+                <a href="#">Skills.js</a>
+            </div>
+            <div class="tab">
+                <a href="#"><i class="fa-solid fa-c" style="color: #b3e6ff;"></i></a>
+                <a href="#">Experience.c</a>
+            </div>
+            <div class="tab">
+                <a href="#"><i class="fa-brands fa-python" style="color: #FFD43B;"></i></a>
+                <a href="#">Projects.py</a>
+            </div>
+            <div class="tab">
+                <a href="{% url 'contact' %}"><i class="fa-regular fa-file"></i></a>
+                <a href="{% url 'contact' %}">Contact.log</a>
+            </div>
+        </div>
+    </header> 
+    
+    {% comment %} Side Bar {% endcomment %}
+    <aside>
+        <div class="top">
+            <a href="#"><i class="fa-solid fa-folder"></i></a>
+            <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>                
+            <a href="#"><i class="fa-brands fa-git-alt"></i></a>                
+        </div>
+        <div class="bottom">
+            <div class="sidebar_tab">
+                <a href="#"><i class="fa-solid fa-user"></i></a>
+            </div>
+            <div class="sidebar_tab">
+                <a href="#"><i class="fa-solid fa-gear"></i></a>
+            </div>
+        </div>
+    </aside>
+
+    <main>
+        <div class="main_divider"></div>
+        <div class="main_div">
+            {% block main_content %}
+                
+            {% endblock %}       
+        </div>
+    </main>
+
+    <footer>
+        <div class="left_footer">
+            <div class="left_footer_content">
+                <span>Connect With Me:</span>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href=""><i class="fa-regular fa-envelope"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
+        </div>
+        <div class="right_footer">
+            <div class="right_footer_content">
+                {% block footer_lang %}
+                    <span>MARKDOWN</span>
+                {% endblock %}
+                <span>UTF-8</span>
+                <a href="#"><i class="fa-solid fa-bell"></i></a>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="{% static 'app.js' %}"></script>
+</body>
+</html>
