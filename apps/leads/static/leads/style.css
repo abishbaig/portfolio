@@ -1,0 +1,77 @@
+.contact-container {
+    margin-top: 8vh;
+}
+
+.contact-msg h1 {
+    font-family: 'Inter', sans-serif;
+}
+
+.contact-content {
+    border-left: 2px solid var(--grey-color);
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+.contact-content h4 {
+    font-family: 'Inter', sans-serif;
+    color: var(--blue-color);
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+.contact-content .contact-form {
+    margin-top: 10px;
+    background-color: var(--secondary-color);
+    width: 35%;
+    border: 1px solid var(--grey-color);
+    border-radius: 10px;
+}
+
+.contact-form label {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    color: var(--white-color);
+}
+
+.contact-form div {
+    margin-top: 10px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 90%;
+    border: 1px solid var(--grey-color);
+    padding: 10px;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.contact-form div input:focus,
+.contact-form div textarea:focus {
+    box-shadow: 0 0 5px 3px var(--blue-color);
+}
+
+.contact-form button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid var(--grey-color);
+    border-radius: 50px;
+    margin-left: 30%;
+    padding: 8px 25px;
+    margin-bottom: 20px;
+}
+
+.contact-form button:hover {
+    background-color: var(--grey-color);
+    color: var(--white-color);
+    transition: 0.3s ease-in-out;
+}
