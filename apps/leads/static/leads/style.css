@@ -2,8 +2,9 @@
     margin-top: 8vh;
 }
 
-.contact-msg h1 {
+.contact-msg h2 {
     font-family: 'Inter', sans-serif;
+    font-weight: 1000;
 }
 
 .contact-content {
@@ -30,7 +31,7 @@
 .contact-form label {
     font-family: 'Inter', sans-serif;
     font-size: 18px;
-    color: var(--white-color);
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .contact-form div {

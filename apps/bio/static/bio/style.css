@@ -1,0 +1,29 @@
+.about-container {
+    margin-top: 8vh;
+}
+
+.about-msg h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 1000;
+}
+
+.about-content {
+    border-left: 2px solid var(--grey-color);
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+.about-content .div-content {
+    font-family: 'Inter', sans-serif;
+    color: var(--blue-color);
+}
+
+.about-content div {
+    margin-top: 10px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+
