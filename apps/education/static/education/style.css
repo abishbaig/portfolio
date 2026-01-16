@@ -1,0 +1,32 @@
+.education-container {
+    margin-top: 8vh;
+}
+
+.education-msg h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 1000;
+}
+
+.education-content {
+    border-left: 2px solid var(--grey-color);
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+.education-item {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.education-item-details {
+    border-left: 2px solid var(--grey-color);
+    padding-left: 20px;
+    margin-top: 8px;
+}
+
+.education-item-details p {
+    margin-top: 5px;
+}
+
+.education-item h3 {
+    color: var(--blue-color);
+}

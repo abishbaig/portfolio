@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% comment %} Linking Static Files {% endcomment %}
+{% block linking_files %}
+    <link rel="stylesheet" href="{% static 'education/style.css' %}">
+{% endblock %}
+
+
+{% comment %} Header Content on Top {% endcomment %}
+{% block header_content %}Education{% endblock %}
+
+{% comment %} Main Content {% endcomment %}
+{% block main_content %}
+    <div class="education-container">
+        <div class="education-msg">
+            <h2>Education</h2>
+        </div>
+        <div class="education-content">
+            {% for education in education %}
+                <div class="education-item">
+                    <h3>{{ education.degree_title }}</h3>
+                    <div class="education-item-details">
+                        <p>{{ education.institute_name }}</p>
+                        {% if education.end_date %}
+                            <p>{{ education.start_date|date:"Y" }} - {{ education.end_date|date:"Y" }}</p>
+                        {% else %}
+                            <p>{{ education.start_date|date:"Y" }} - Present</p>
+                        {% endif %}
+                        <br>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
