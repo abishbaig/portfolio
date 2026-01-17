@@ -1,0 +1,59 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% comment %} Linking Static Files {% endcomment %}
+{% block linking_files %}
+    <link rel="stylesheet" href="{% static 'skills/style.css' %}">
+{% endblock %}
+
+
+{% comment %} Header Content on Top {% endcomment %}
+{% block header_content %}Skills{% endblock %}
+
+{% comment %} Main Content {% endcomment %}
+{% block main_content %}
+    <div class="skills-container">
+        <div class="skills-msg">
+            <h2>Skills</h2>
+        </div>
+        <div class="skills-content">
+            <div class="skills-item">
+                <table class="skills-table">
+                    <tr style="text-align: center;">
+                        <th>Skill</th>
+                        <th>Level</th>
+                        <th>Category</th>
+                        {% if user.is_authenticated %}
+                        <th>Actions</th>
+                        {% endif %}
+                    </tr>
+                    <tr>
+                        {% for skill in skills %}
+                        {% if skill.skill_image %}
+                        <td><div><img src="{{ skill.skill_image.url }}" alt="-" width="30" height="30"><span>{{ skill.skill_name }}</span></div></td>
+                            {% else %}
+                                <td><div><span>{{ skill.skill_name }}</span></div></td>
+                                {% endif %}
+                                {% if skill.skill_level == 'Beginner' %}
+                                <td><span id="skill-level-beginner">{{ skill.skill_level }}</span></td>
+                            {% elif skill.skill_level == 'Intermediate' %}
+                                <td><span id="skill-level-intermediate">{{ skill.skill_level }}</span></td>
+                                {% elif skill.skill_level == 'Advanced' %}
+                                <td><span id="skill-level-advanced">{{ skill.skill_level }}</span></td>
+                            {% endif %}
+                            <td>{{ skill.skill_category }}</td>
+                            {% if user.is_authenticated %}
+                                <td>
+                                    <div style=" display: flex; align-items: center; justify-content: center; gap: 10px;">
+                                        <a href="#"><i style=" color: rgba(82, 136, 254, 0.8);" class="fa-regular fa-pen-to-square"></i></a>
+                                        <a href="#"><i style=" color: rgba(251, 0, 0, 0.8);" class="fa-solid fa-trash"></i></a>
+                                    </div>
+                                </td>
+                            {% endif %}
+                        </tr>
+                    {% endfor %}
+                    </table>
+                </div>
+        </div>
+    </div>
+{% endblock %}

@@ -12,6 +12,30 @@ body {
     height: 100%;
 }
 
+.scrollbar-element{
+    scrollbar-width: auto;
+    scrollbar-color: var(--grey-color) var(--secondary-color);
+}
+
+/* Scroll Bar Styling */
+.scrollbar-element::-webkit-scrollbar {
+    width: auto;
+
+}
+
+.scrollbar-element::-webkit-scrollbar-track {
+    background: var(--secondary-color);
+}
+
+.scrollbar-element::-webkit-scrollbar-thumb {
+    background: var(--grey-color);
+    border-radius: 5px;
+}
+
+.scrollbar-element::-webkit-scrollbar-thumb:hover {
+    background: var(--blue-color);
+}
+
 /* ---------------------------------------------------------------------------------- */
 /* Setting Root Colors */
 :root {
