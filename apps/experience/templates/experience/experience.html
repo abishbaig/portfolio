@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% comment %} Linking Static Files {% endcomment %}
+{% block linking_files %}
+    <link rel="stylesheet" href="{% static 'experience/style.css' %}">
+{% endblock %}
+
+{% comment %} Header Content on Top {% endcomment %}
+{% block header_content %}Experience{% endblock %}
+
+{% comment %} Main Content {% endcomment %}
+{% block main_content %}
+    <div class="experience-container">
+        <div class="experience-msg">
+            <h2>Experience</h2>
+        </div>
+        <div class="experience-content">
+            {% for experience in experience %}
+                <div class="experience-item">
+                    {% if experience.company_url %}
+                        <a href="{{ experience.company_url }}" target="_blank">
+                            <h3>{{ experience.company_name }}</h3>
+                        </a>
+                    {% else %}
+                        <h3>{{ experience.company_name }}</h3>
+                    {% endif %}
+                    <div class="experience-item-details">
+                        <p>{{ experience.position }}</p>
+                        {% if experience.end_date %}
+                            <p>{{ experience.start_date|date:"F Y" }} - {{ experience.end_date|date:"F Y" }}</p>
+                        {% else %}
+                            <p>{{ experience.start_date|date:"F Y" }} - Present</p>
+                        {% endif %}
+                        <p>{{ experience.description }}</p>
+                        <br>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

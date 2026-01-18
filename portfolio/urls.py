@@ -4,6 +4,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 from .views import homeView
 
+admin.site.site_header = "Portfolio Admin Portal"
+admin.site.site_title = "Portfolio Admin Portal"
+admin.site.index_title = "Welcome to Portfolio Admin Portal"
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("",homeView,name="home"),
