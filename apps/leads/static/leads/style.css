@@ -10,7 +10,7 @@
 .contact-content {
     border-left: 2px solid var(--grey-color);
     padding-left: 20px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .contact-content h4 {
@@ -45,7 +45,7 @@
 .contact-form textarea {
     width: 90%;
     border: 1px solid var(--grey-color);
-    padding: 10px;
+    padding: 8px 10px;
     border-radius: 5px;
     background-color: var(--primary-color);
     color: var(--white-color);

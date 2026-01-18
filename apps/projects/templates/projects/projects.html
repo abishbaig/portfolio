@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% comment %} Linking Static Files {% endcomment %}
+{% block linking_files %}
+    <link rel="stylesheet" href="{% static 'projects/style.css' %}">
+{% endblock %}
+
+{% comment %} Header Content on Top {% endcomment %}
+{% block header_content %}Projects{% endblock %}
+
+{% comment %} Main Content {% endcomment %}
+{% block main_content %}
+    <div class="projects-container">
+        <div class="projects-msg">
+            <h2>Projects</h2>
+        </div>
+        <div class="projects-content">
+            {% for project in projects %}
+                <div class="projects-item">
+                    <div class="projects-item-details">
+                        <h3>{{ project.name }}</h3>
+                        <div class="project-item-content">
+                            <p>{{ project.description }}</p>
+                            <p id="tech">{{ project.technologies }}</p>
+                            <div class="project-item-links">
+                                <a href="{{ project.github_url }}"><i class="fab fa-github"></i></a>
+                                <a href="{{ project.linkedin_url }}"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                    <div class="projects-item-image">
+                        <img src="{{ project.image.url }}" alt="{{ project.name }}">
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

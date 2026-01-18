@@ -41,8 +41,8 @@
                 <a href="{% url 'experience:experience' %}">Experience.c</a>
             </div>
             <div class="tab">
-                <a href="#"><i class="fa-brands fa-python" style="color: #FFD43B;"></i></a>
-                <a href="#">Projects.py</a>
+                <a href="{% url 'projects:projects' %}"><i class="fa-brands fa-python" style="color: #FFD43B;"></i></a>
+                <a href="{% url 'projects:projects' %}">Projects.py</a>
             </div>
             <div class="tab">
                 <a href="{% url 'contact' %}"><i class="fa-regular fa-file"></i></a>
@@ -54,17 +54,19 @@
     {% comment %} Side Bar {% endcomment %}
     <aside>
         <div class="top">
-            <a href="#"><i class="fa-solid fa-folder"></i></a>
-            <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>                
-            <a href="#"><i class="fa-brands fa-git-alt"></i></a>                
+            <a href="{% url 'home' %}"><i class="fa-solid fa-folder"></i></a>
+            <a href="{% url 'projects:projects' %}"><i class="fa-solid fa-magnifying-glass"></i></a>                
+            <a href="https://github.com/abishbaig"><i class="fa-brands fa-git-alt"></i></a>                
         </div>
         <div class="bottom">
             <div class="sidebar_tab">
-                <a href="#"><i class="fa-solid fa-user"></i></a>
+                <a href="{% url 'bio:about' %}"><i class="fa-solid fa-user"></i></a>
             </div>
-            <div class="sidebar_tab">
-                <a href="#"><i class="fa-solid fa-gear"></i></a>
-            </div>
+            {% if user.is_authenticated %}
+                <div class="sidebar_tab">
+                    <a href="/admin/"><i class="fa-solid fa-gear"></i></a>
+                </div>
+            {% endif %}
         </div>
     </aside>
 
@@ -81,10 +83,9 @@
         <div class="left_footer">
             <div class="left_footer_content">
                 <span>Connect With Me:</span>
-                <a href="#"><i class="fa-brands fa-github"></i></a>
-                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href=""><i class="fa-regular fa-envelope"></i></a>
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://github.com/abishbaig"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/abishbaig/"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="mailto:baig.abish423@gmail.com"><i class="fa-regular fa-envelope"></i></a>
             </div>
         </div>
         <div class="right_footer">
@@ -93,7 +94,7 @@
                     <span>MARKDOWN</span>
                 {% endblock %}
                 <span>UTF-8</span>
-                <a href="#"><i class="fa-solid fa-bell"></i></a>
+                <a href="{% url 'contact' %}"><i class="fa-solid fa-bell"></i></a>
             </div>
         </div>
     </footer>

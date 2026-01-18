@@ -69,7 +69,7 @@ Follow these steps to set up the project locally:
 - **`apps/`**: Contains modular applications:
     - `bio`: Biography information.
     - `education`: Academic background.
-    - `skills`: Technical and soft skills.
+    - `skills`: Technical skills.
     - `experience`: Work history.
     - `projects`: Showcase of personal/professional projects.
     - `leads`: Contact form and handling.
